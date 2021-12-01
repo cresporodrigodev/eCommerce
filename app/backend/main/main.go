@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/cresporodrigodev/eCommerce/app/backend/main/boostrap"
+	"github.com/cresporodrigodev/ecommerce/app/backend/main/boostrap"
 	"log"
 )
 

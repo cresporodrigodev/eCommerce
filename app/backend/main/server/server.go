@@ -2,8 +2,8 @@ package server
 
 import (
 	"fmt"
-	"github.com/cresporodrigodev/eCommerce/app/backend/main/server/handler"
-	"github.com/cresporodrigodev/eCommerce/app/backend/main/server/user"
+	"github.com/cresporodrigodev/ecommerce/app/backend/main/server/handler"
+	"github.com/cresporodrigodev/ecommerce/app/backend/main/server/user"
 	"github.com/gin-gonic/gin"
 	"log"
 )
