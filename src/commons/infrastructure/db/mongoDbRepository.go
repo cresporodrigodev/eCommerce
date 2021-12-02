@@ -46,16 +46,6 @@ func (m MongoDbRepository) Close() error {
 }
 
 func (m MongoDbRepository) Insert(database, collection string, documents []interface{}) error {
-	type coll struct {
-		userAlias string `bson:"user_alias"`
-		userName  string `bson:"user_name"`
-		userId    string `bson:"user_id"`
-	}
-	c := coll{
-		userAlias: "rcrespo",
-		userName:  "rodrigo crespo",
-		userId:    "41589231",
-	}
 
 	err := m.Connect()
 	if err != nil {
@@ -76,7 +66,7 @@ func (m MongoDbRepository) Insert(database, collection string, documents []inter
 		return nil
 	}
 
-	_, err = mongoCollection.InsertOne(context.TODO(), c)
+	_, err = mongoCollection.InsertOne(context.TODO(), documents[0])
 	if err != nil {
 		return err
 	}

@@ -3,7 +3,7 @@ package db
 import (
 	"errors"
 	"fmt"
-	"github.com/cresporodrigodev/eCommerce/src/users/domain/entity"
+	"github.com/cresporodrigodev/ecommerce/src/users/domain/entity"
 )
 
 type userData struct {
