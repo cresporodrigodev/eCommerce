@@ -1,6 +1,6 @@
 package entity
 
-import VO "github.com/cresporodrigodev/eCommerce/src/users/domain/valueObject"
+import VO "github.com/cresporodrigodev/ecommerce/src/users/domain/valueObject"
 
 type User struct {
 	id         VO.UserId

@@ -1,7 +1,7 @@
 package symbolValidation
 
 import (
-	"github.com/cresporodrigodev/eCommerce/src/commons/domain/symbolValidation"
+	"github.com/cresporodrigodev/ecommerce/src/commons/domain/symbolValidation"
 	"testing"
 )
 

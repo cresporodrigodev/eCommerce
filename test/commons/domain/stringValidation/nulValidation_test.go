@@ -1,7 +1,7 @@
 package stringValidation
 
 import (
-	"github.com/cresporodrigodev/eCommerce/src/commons/domain/stringValidation"
+	"github.com/cresporodrigodev/ecommerce/src/commons/domain/stringValidation"
 	"testing"
 )
 

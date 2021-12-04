@@ -1,8 +1,8 @@
 package db
 
 import (
-	"github.com/cresporodrigodev/eCommerce/src/commons/infrastructure/db"
-	"github.com/cresporodrigodev/eCommerce/src/users/domain/entity"
+	"github.com/cresporodrigodev/ecommerce/src/commons/infrastructure/db"
+	"github.com/cresporodrigodev/ecommerce/src/users/domain/entity"
 )
 
 type userModel struct {

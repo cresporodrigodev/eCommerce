@@ -1,9 +1,9 @@
 package register
 
 import (
-	"github.com/cresporodrigodev/eCommerce/src/users/domain/entity"
-	"github.com/cresporodrigodev/eCommerce/src/users/domain/repository"
-	V0 "github.com/cresporodrigodev/eCommerce/src/users/domain/valueObject"
+	"github.com/cresporodrigodev/ecommerce/src/users/domain/entity"
+	"github.com/cresporodrigodev/ecommerce/src/users/domain/repository"
+	V0 "github.com/cresporodrigodev/ecommerce/src/users/domain/valueObject"
 )
 
 type RegisterNewUser struct {

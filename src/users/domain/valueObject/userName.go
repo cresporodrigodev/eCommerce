@@ -3,7 +3,8 @@ package valueObject
 import (
 	"errors"
 	"fmt"
-	"github.com/cresporodrigodev/eCommerce/src/commons/domain"
+	strValidation "github.com/cresporodrigodev/ecommerce/src/commons/domain/stringValidation"
+	symValidation "github.com/cresporodrigodev/ecommerce/src/commons/domain/symbolValidation"
 )
 
 type UserFirstName struct {
@@ -14,15 +15,14 @@ func NewUserFirstName(firstName string) (UserFirstName, error) {
 	firstNameError := errors.New("invalid user alias")
 	symbolError := errors.New("user first name cannot contain special characters")
 
-	str := domain.NewStringValidation(firstName, firstNameError)
-	str.Validation()
+	strVal := strValidation.NewStringValidation(firstName)
+	strValue, err := strVal.Validation()
 
-	strValue, err := str.GetErrAndValue()
 	if err != nil {
-		return UserFirstName{}, err
+		return UserFirstName{}, fmt.Errorf("%w: %s", firstNameError, firstName)
 	}
 
-	symbolValidation := domain.NewSymbolValidation(strValue, symbolError)
+	symbolValidation := symValidation.NewSymbolValidation(strValue)
 	if hasSymbol := symbolValidation.HasSymbol(); hasSymbol != false {
 		return UserFirstName{}, fmt.Errorf("%w: %s", symbolError, firstName)
 	}
@@ -42,15 +42,14 @@ func NewUserSecondName(secondName string) (UserSecondName, error) {
 	secondNameError := errors.New("invalid user alias")
 	symbolError := errors.New("user second name cannot contain special characters")
 
-	str := domain.NewStringValidation(secondName, secondNameError)
-	str.Validation()
+	strVal := strValidation.NewStringValidation(secondName)
+	strValue, err := strVal.Validation()
 
-	strValue, err := str.GetErrAndValue()
 	if err != nil {
-		return UserSecondName{}, err
+		return UserSecondName{}, fmt.Errorf("%w: %s", secondNameError, secondName)
 	}
 
-	symbolValidation := domain.NewSymbolValidation(strValue, symbolError)
+	symbolValidation := symValidation.NewSymbolValidation(strValue)
 	if hasSymbol := symbolValidation.HasSymbol(); hasSymbol != false {
 		return UserSecondName{}, fmt.Errorf("%w: %s", symbolError, secondName)
 	}

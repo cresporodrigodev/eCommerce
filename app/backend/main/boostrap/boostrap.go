@@ -1,7 +1,7 @@
 package boostrap
 
 import (
-	"github.com/cresporodrigodev/eCommerce/app/backend/main/server"
+	"github.com/cresporodrigodev/ecommerce/app/backend/main/server"
 )
 
 const (

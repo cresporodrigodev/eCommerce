@@ -3,7 +3,7 @@ package valueObject
 import (
 	"errors"
 	"fmt"
-	"github.com/cresporodrigodev/eCommerce/src/commons/domain"
+	"github.com/cresporodrigodev/ecommerce/src/commons/domain"
 )
 
 type UserId struct {

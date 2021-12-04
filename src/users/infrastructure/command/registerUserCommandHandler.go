@@ -1,8 +1,8 @@
 package command
 
 import (
-	"github.com/cresporodrigodev/eCommerce/src/users/domain/repository"
-	"github.com/cresporodrigodev/eCommerce/src/users/service/register"
+	"github.com/cresporodrigodev/ecommerce/src/users/domain/repository"
+	"github.com/cresporodrigodev/ecommerce/src/users/service/register"
 )
 
 type RegisterNewUserCommandHandler struct {

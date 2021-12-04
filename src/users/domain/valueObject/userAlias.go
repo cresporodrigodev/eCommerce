@@ -3,7 +3,8 @@ package valueObject
 import (
 	"errors"
 	"fmt"
-	"github.com/cresporodrigodev/eCommerce/src/commons/domain"
+	strValidation "github.com/cresporodrigodev/ecommerce/src/commons/domain/stringValidation"
+	symValidation "github.com/cresporodrigodev/ecommerce/src/commons/domain/symbolValidation"
 )
 
 type UserAlias struct {
@@ -15,19 +16,18 @@ func NewUserAlias(alias string) (UserAlias, error) {
 	lenError := errors.New("user alias must be less than 50 characters")
 	symbolError := errors.New("user alias cannot contain special characters")
 
-	str := domain.NewStringValidation(alias, aliasError)
-	str.Validation()
-	strValue, err := str.GetErrAndValue()
+	strVal := strValidation.NewStringValidation(alias)
+	strValue, err := strVal.Validation()
 
 	if err != nil {
-		return UserAlias{}, err
+		return UserAlias{}, fmt.Errorf("%w; %s", aliasError, alias)
 	}
 
 	if len(strValue) > 50 {
 		return UserAlias{}, fmt.Errorf("%w: %s", lenError, alias)
 	}
 
-	symbolValidation := domain.NewSymbolValidation(strValue, symbolError)
+	symbolValidation := symValidation.NewSymbolValidation(strValue)
 	if hasSymbol := symbolValidation.HasSymbol(); hasSymbol != false {
 		return UserAlias{}, fmt.Errorf("%w: %s", symbolError, alias)
 	}
